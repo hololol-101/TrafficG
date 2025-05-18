@@ -1,0 +1,12 @@
+/* src/styles/font.css */
+
+@font-face {
+  font-family: 'KrabbyPatty';
+  src: url('../assets/fonts/KrabbyPatty.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-krabby: 'KrabbyPatty', sans-serif;
+}
