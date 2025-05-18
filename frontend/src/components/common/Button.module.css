@@ -1,0 +1,19 @@
+.button {
+  width: 100%;
+  flex: auto;
+  padding: 0.8rem;
+  background-color: var(--color-button-bg);
+  color: var(--color-button-text);
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-family: 'KrabbyPatty', Arial, sans-serif;
+}
+
+.button:hover {
+  font-family: 'KrabbyPatty', Arial, sans-serif;
+  background-color: var(--color-button-hover);
+}
