@@ -1,34 +1,28 @@
 // ShowDetail.tsx
-import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import styles from './ShowDetail.module.css';
-
-interface Show {
-  showId: number;
-  name: string;
-  detail: string;
-  imageUrl: string;
-  startDate: string;
-  endDate: string;
-}
+import QueueModal from '../../components/modal/QueueModal';
+import Button from '../../components/common/Button';
+import { Show } from '../../types/show';
+import { fetchShow } from '../../api/show';
+import { useParams } from 'react-router-dom';
 
 const ShowDetail = () => {
-  const { showId } = useParams();
+  const {id} = useParams<{id:string}>();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [show, setShow] = useState<Show | null>(null);
-  useEffect(() => {
-  const mock = {
-    showId: 1,
-    name: "SpongeBob's Guitar Performance",
-    detail: "I'm not child!!!",
-    imageUrl: "/src/assets/mock/spongebob.jpg",
-    startDate: "2025-05-10",
-    endDate: "2025-05-12"
+
+
+  const handleReserveClick = () => {
+    setIsModalOpen(true);
   };
 
-  setTimeout(() => {
-    setShow(mock);
-  }, 300); // 로딩 느낌 주고 싶으면 timeout, 아니면 바로 setShow(mock);
-}, [showId]);
+   useEffect(() => {
+    if (!id) return;
+    fetchShow(Number(id))
+      .then(setShow)
+      .catch(console.error);
+  }, [id]);
 
   /*
   useEffect(() => {
@@ -46,7 +40,12 @@ const ShowDetail = () => {
       <h2 className={styles.title}>{show.name}</h2>
       <p className={styles.date}>{show.startDate} ~ {show.endDate}</p>
       <p className={styles.detail}>{show.detail}</p>
-      <button className={styles.reserveButton}>예매하기</button>
+     <Button onClick={handleReserveClick}>예매하기</Button>
+      {isModalOpen && (
+        <QueueModal total={200} position={22} onClose={() => setIsModalOpen(false)} />
+
+      )}
+
     </div>
   );
 };

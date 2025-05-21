@@ -14,7 +14,7 @@ function App() {
           <Route index element={<Login />} />
           <Route path="signup" element={<Signup />} />
           <Route path="showList" element={<ShowList />} />
-          <Route path="/shows/:showId" element={<ShowDetail />} />
+          <Route path="/shows/:id" element={<ShowDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>
