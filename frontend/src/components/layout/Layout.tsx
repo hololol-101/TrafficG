@@ -1,9 +1,13 @@
 // src/layout/Layout.tsx
 import { Outlet } from 'react-router-dom';
-
+import Header from './Header';
 const Layout = () => {
   return (
-    <div
+    <>
+    <Header />
+    <main>
+      <div
+      
       style={{
         height: '100vh',
         width: '100vw',
@@ -14,7 +18,9 @@ const Layout = () => {
     >
       <Outlet />
     </div>
-  );
+
+    </main> 
+    </> );
 };
 
 export default Layout;

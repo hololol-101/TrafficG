@@ -1,7 +1,9 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --font-krabby: 'KrabbyPatty';
+  --font-korean: 'yangjin';
+  --font-fallback: sans-serif;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -15,11 +17,17 @@
 
 @font-face {
   font-family: 'KrabbyPatty';
-  src: url('/src/assets/fonts/Krabby Patty.ttf') format('truetype');
+  src: url("../src/assets/fonts/Krabby Patty.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'yangjin';
+    src: url('../src/assets/fonts/yangjin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 a {
   font-weight: 500;
@@ -37,11 +45,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   align-items: center;
+  font-family: 'KrabbyPatty',  'yangjin', sans-serif;
   background-image: url('/src/assets/background.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  font-family: 'KrabbyPatty', sans-serif;
 }
 
 h1 {

@@ -2,20 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-family: 'KrabbyPatty', 'Courier New', monospace, Arial, sans-serif;
 }
 
 .label {
   font-size: 0.9rem;
   color: var(--color-text-dark);
   font-weight: 500;
-  font-family: 'KrabbyPatty', 'Courier New', monospace, Arial, sans-serif;
 }
 .input {
+  all: unset;
   width: 100%;
   padding: 1rem 1.2rem;
   font-size: 1rem;
-  font-family: 'KrabbyPatty', Arial, sans-serif;
   border: 1px solid var(--color-border);
   border-radius: 1.5rem;
   background-color: var(--color-secondary);
@@ -32,7 +30,6 @@
 
 .input::placeholder {
   color: var(--color-placeholder);
-  font-family: 'KrabbyPatty', Arial, sans-serif;
 }
 
 
