@@ -24,28 +24,24 @@ const ShowDetail = () => {
       .catch(console.error);
   }, [id]);
 
-  /*
-  useEffect(() => {
-    // 실제 API로 대체
-    fetch(`/api/shows/${showId}`)
-      .then(res => res.json())
-      .then(data => setShow(data));
-  }, [showId]);
-*/
+ 
   if (!show) return <div>Loading...</div>;
 
   return (
     <div className={styles.container}>
       <img src={show.imageUrl} alt={show.name} className={styles.image} />
       <h2 className={styles.title}>{show.name}</h2>
+      <p className={styles.date}>상세정보:</p>
       <p className={styles.date}>{show.startDate} ~ {show.endDate}</p>
       <p className={styles.detail}>{show.detail}</p>
-     <Button onClick={handleReserveClick}>예매하기</Button>
-      {isModalOpen && (
-        <QueueModal total={200} position={22} onClose={() => setIsModalOpen(false)} />
+      <div className={styles.buttonMethods}>
 
-      )}
+        <Button onClick={handleReserveClick}>예매하기</Button>
+          {isModalOpen && (
+            <QueueModal total={200} position={22} onClose={() => setIsModalOpen(false)} />
 
+          )}
+      </div>
     </div>
   );
 };

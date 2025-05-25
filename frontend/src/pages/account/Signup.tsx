@@ -3,8 +3,12 @@ import Input from '../../components/common/Input';
 import Button from '../../components/common/Button';
 import ButtonWrapper from '../../components/common/ButtonWrapper';
 import styles from './Signup.module.css';
+import { signUp } from '../../api/auth';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     accountId: '',
     password: '',
@@ -22,16 +26,12 @@ const Signup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error('회원가입 실패');
-      alert('회원가입 성공!');
-    } catch (err) {
+      signUp(form);
+      alert('회원가입 성공! 로그인 페이지로 이동합니다.');
+      navigate('/'); // 👉 이동
+    } catch (err: any) {
       console.error(err);
-      alert('회원가입 중 오류가 발생했습니다.');
+      alert(err.message);
     }
   };
 

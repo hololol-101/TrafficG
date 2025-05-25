@@ -9,7 +9,6 @@
   max-width: 600px;
   margin: 0 auto;
   color: var(--color-text-dark);
-  font-family: 'KrabbyPatty', sans-serif;
 }
 
 .image {
@@ -60,3 +59,20 @@
   background-color: var(--color-accent);
   transition: width 0.5s ease;
 }
+
+
+.buttonMethods label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+
+.buttonMethods {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
