@@ -1,15 +1,35 @@
 {
+  "users": [
+    {
+      "id": "1",
+      "accountId": "SpongeBob",
+      "password": "square!",
+      "name": "스폰지밥",
+      "email": "SpongeBob@krabby.com",
+      "phoneNumber": "010-1234-2222",
+      "address": "비키니 시티, 파인애플 집"
+    },
+    {
+      "id": "a636",
+      "accountId": "Patrick",
+      "password": "pstar",
+      "name": "뚱이",
+      "email": "PStar@bikiny.com",
+      "phoneNumber": "02134982",
+      "address": "돌덩이 위"
+    }
+  ],
   "shows": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Spongebob's Electric Guitar",
       "imageUrl": "/src/assets/mock/spongebob.jpg",
-      "detail": "Dingkong Dangkong Yeah",
+      "detail": "나는 띵콩 땅콩 예. \n 너도 띵콩 땅콩 예. \n 우린 모두 띵콩 땅콩 예!!! \n띵콩띵콩 땅콩땅콩 예~~~~!!!",
       "startDate": "2025-05-10",
       "endDate": "2025-05-12"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Patrick's Super Star",
       "detail": "I'm PSTAR",
       "imageUrl": "/src/assets/mock/patrick.jpeg",
@@ -17,7 +37,7 @@
       "endDate": "2025-06-03"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Squidward's Clarinet",
       "detail": "Clarinet is fantastic",
       "imageUrl": "/src/assets/mock/Squidward.png",
@@ -25,7 +45,7 @@
       "endDate": "2025-10-10"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sindy's Acoustic Guitar",
       "detail": "I wanna go home",
       "imageUrl": "/src/assets/mock/sindy.jpg",
@@ -33,24 +53,93 @@
       "endDate": "2025-10-10"
     }
   ],
-  "users": [
-    {
-      "id": 1,
-      "accountId": "SpongeBob",
-      "password": "square!",
-      "name": "SpongeBob",
-      "email": "SpongeBob@krabby.com",
-      "phoneNumber": "010-1234-2222",
-      "address": "비키니 시티, 파인애플 집"
-    }
-  ],
   "reservations": [
     {
-      "id": 1,
+      "id": "1",
       "userId": 1,
       "showId": 1,
       "seat": "A10",
       "createdAt": "2025-05-10T10:00:00"
+    }
+  ],
+  "reserve": [
+    {
+      "id": "49a5",
+      "showId": 1,
+      "seats": [],
+      "userId": null
+    },
+    {
+      "id": "c77c",
+      "showId": 1,
+      "seats": [
+        "C4",
+        "D4",
+        "E4",
+        "F4"
+      ],
+      "userId": null
+    },
+    {
+      "id": "57a3",
+      "showId": 1,
+      "seats": [
+        "D5",
+        "E5"
+      ],
+      "userId": null
+    },
+    {
+      "id": "074f",
+      "showId": 3,
+      "seats": [
+        "D4",
+        "E3",
+        "F4"
+      ],
+      "userId": null
+    },
+    {
+      "id": "4190",
+      "showId": 2,
+      "seats": [
+        "B4"
+      ],
+      "userId": null
+    },
+    {
+      "id": "30d5",
+      "showId": 1,
+      "seats": [
+        "D3",
+        "D5",
+        "F8",
+        "F4"
+      ],
+      "userId": null
+    }
+  ],
+  "payment": [
+    {
+      "id": "d3e7",
+      "userId": null,
+      "reservation_id": 4190,
+      "amount": "6,000",
+      "status": "Success"
+    },
+    {
+      "id": "8bb5",
+      "userId": null,
+      "reservation_id": 4190,
+      "amount": "6,000",
+      "status": "Success"
+    },
+    {
+      "id": "a30f",
+      "userId": null,
+      "reservation_id": null,
+      "amount": "24,000",
+      "status": "Success"
     }
   ]
 }
