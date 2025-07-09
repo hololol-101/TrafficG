@@ -7,7 +7,7 @@ import Signup from './pages/account/Signup';
 import ShowList from './pages/show/showList';
 import ShowDetail from './pages/show/showDetail';
 import SeatSelector from './pages/reserve/seatSelector';
-import Payment from './pages/payment/Payment';
+import Payment from './pages/payment/payment';
 import PaymentSuccess from './pages/payment/paymentSuccess';
 import './styles/colors.css'
 
