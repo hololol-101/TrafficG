@@ -17,6 +17,15 @@
       "email": "PStar@bikiny.com",
       "phoneNumber": "02134982",
       "address": "돌덩이 위"
+    },
+    {
+      "id": "5a80",
+      "accountId": "SpongeBob",
+      "password": "square!",
+      "name": "",
+      "email": "",
+      "phoneNumber": "",
+      "address": ""
     }
   ],
   "shows": [
