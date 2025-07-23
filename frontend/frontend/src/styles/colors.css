@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #a9dcf5;         /* 버튼 배경 - 파스텔 하늘색 */
+  --color-primary-hover: #91ccec;   /* 버튼 hover용 약간 진한 하늘 */
+  --color-secondary: #eaf4ff;       /* input 배경 - 흐린 연파랑 */
+  --color-accent: #ff7bbf;          /* 강조 포인트 (ex. 회원가입 링크 등) */
+
+  --color-text-dark: #2b3a4b;       /* 주 텍스트 - 차분한 네이비 */
+  --color-text-light: #ffffff;      /* 흰 텍스트 (예: 다크 버튼 배경일 때) */
+  --color-border: #bcdff1;          /* input border 등 */
+  --color-background: #c2ebff;      /* 전체 배경색이 필요할 경우 */
+
+  --color-shadow: rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+  --color-button-bg: #E9D8A6; /* 따뜻한 베이지 모래색 */
+  --color-button-hover: #D4C28A;
+  --color-button-text: #2c2c2c;
+}
