@@ -1,70 +1,28 @@
 package com.project.backend.auth.dto;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import lombok.*;
+
+@Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserSignUpRequestDto {
+    @NotBlank
+    @Pattern(
+            regexp = "^[a-zA-Z][a-zA-Z\\d]{6,19}",
+            message = "id는 영어로 시작하고 영문자, 숫자를 포함한 7~20자여야 합니다."
+    )
     private String accountId;
+    @NotBlank
+    @Pattern(
+            regexp = "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[!@#$%^&*()])[a-zA-Z\\d!@#$%^&*()]{8,12}$",
+            message = "비밀번호는 영문자, 숫자, 특수문자를 포함한 8~12자여야 합니다."
+    )
     private String password;
     private String name;
     private String email;
     private String phoneNumber;
     private String address;
-
-    public UserSignUpRequestDto() {
-    }
-
-    public UserSignUpRequestDto(String accountId, String password, String name, String email, String phoneNumber, String address) {
-        this.accountId = accountId;
-        this.password = password;
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-    }
-
-    public String getAccountId() {
-        return accountId;
-    }
-
-    public void setAccountId(String accountId) {
-        this.accountId = accountId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 }

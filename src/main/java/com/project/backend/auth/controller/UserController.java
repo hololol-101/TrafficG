@@ -1,6 +1,8 @@
 package com.project.backend.auth.controller;
 
-import com.project.backend.auth.domain.UserDto;
+import com.project.backend.auth.domain.User;
+import com.project.backend.auth.dto.UserLoginRequestDto;
+import com.project.backend.auth.dto.UserLoginResponseDto;
 import com.project.backend.auth.dto.UserSignUpRequestDto;
 import com.project.backend.auth.dto.UserSignUpResponseDto;
 import com.project.backend.auth.service.UserService;
@@ -19,25 +21,21 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public UserSignUpResponseDto signUp(@RequestBody UserSignUpRequestDto userSignUpRequestDto) {
-        UserDto savedUserDto = userService.signUp(userSignUpRequestDto);
+    public ResponseEntity<String> signUp(@RequestBody UserSignUpRequestDto userSignUpRequestDto) {
+        User savedUser = userService.signUp(userSignUpRequestDto);
         UserSignUpResponseDto userSignUpResponseDto = new UserSignUpResponseDto();
-        return UserSignUpResponseDto;
+        return ResponseEntity.ok("회원가입 성공");
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UserDto> login(
-            @RequestParam String accountId,
-            @RequestParam String password) {
-        return userService.login(accountId, password)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.status(401).build());
+    public ResponseEntity<UserLoginResponseDto> login(@RequestBody UserLoginRequestDto userLoginRequestDto) {
+        return ResponseEntity.ok(userService.login(userLoginRequestDto));
     }
-
-    @PostMapping("/logout")
-    public ResponseEntity<UserDto> getUser(@PathVariable Long id) {
-        return userService.findById(id)
+    /*
+    @PostMapping("/logout/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        return userService.logout(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
-    }
+    }*/
 }
